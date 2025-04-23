@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Canvas Painting Workshop - Cloudy Project</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Inter.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/Availability---Manage-availability-bookings-appointments_v1.css">
+    <link rel="stylesheet" href="assets/css/availability-container.css">
+    <link rel="stylesheet" href="assets/css/Bootstrap-4---Payment-Form.css">
+    <link rel="stylesheet" href="assets/css/Contact-Details-icons.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-v2-Modal--Full-with-Google-Map.css">
+    <link rel="stylesheet" href="assets/css/Hero-Clean-Reverse-images.css">
+    <link rel="stylesheet" href="https://djpsoftwarecdn.azureedge.net/availabilitycss-v1/availability.min.css">
+    <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/Product-Details.css">
+    <link rel="stylesheet" href="assets/css/Team.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav">
+        <div class="container">
+            <picture><img class="rounded-circle me-2" src="assets/img/195274641.jpeg" width="49" height="49"></picture><a class="navbar-brand d-flex align-items-center" href="home.html"><span>Cloudy's Studio</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-end" href="/home.html">Home</a></li>
+                    <li class="nav-item text-end"></li>
+                    <li class="nav-item text-end"><a class="nav-link text-end" href="/workshop.html" style="color: var(--bs-black);">Workshop</a></li>
+                    <li class="nav-item text-end"><a class="nav-link text-end" href="team.html">Team</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="py-5">
+        <div class="container py-4 py-xl-5" data-aos="fade-left" data-aos-duration="600">
+            <div class="row gy-4 gy-md-0">
+                <div class="col-md-6">
+                    <div class="p-xl-5 m-xl-5"><img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" src="assets/img/products/145.jpg">
+                        <p class="my-3"><span style="color: rgb(0, 0, 0);">A relaxing and creative session where participants paint on blank canvases using acrylics or watercolors. Guided or freestyle, this workshop lets individuals explore their artistic side, learn basic painting techniques, and create their own masterpiece to take home. Ideal for all skill levels and perfect for unwinding through art.</span></p>
+                    </div>
+                </div>
+                <div class="col-md-6 d-md-flex align-items-md-center">
+                    <div style="max-width: 350px;">
+                        <h2 class="text-uppercase fw-bold">CANVAS Painting workshop</h2><style>
+        /* Basic body styling for better presentation */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Ensure labels have adequate spacing */
+        label {
+            margin-bottom: 0.5rem; /* Equivalent to mb-2 */
+            display: block; /* Equivalent to d-block */
+        }
+        /* Style inputs */
+        input[type="datetime-local"] {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 0.375rem; /* rounded-md */
+            width: 100%; /* Ensure inputs take full width of their container */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+
+    <div class="availability-container max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+        <div class="availability-guidance mb-4 text-center">
+            <p class="text-xl font-semibold text-gray-700">Please Book our Workshop</p>
+        </div>
+
+        <div class="availability-wrapper w-full"
+             data-customer-id="8DCFD3C1-F06A-2DF5-AC70-EF4FCEA97E0F"
+             data-category="getCategoryAsync"
+             data-contact-url="contact.html">
+
+            <label class="mb-4 text-sm text-gray-600 text-center block" for="check-availability">
+                Note that we require at least 5 days notice. Bookings can be a maximum of 100 days ahead.
+            </label>
+
+            <div class="availability-input-wrapper space-y-4">
+                <div>
+                    <label class="text-gray-700 font-medium" for="selected-start-date">Start date and time</label>
+                    <input id="selected-start-date"
+                           type="datetime-local"
+                           onchange="removeDataPlusFeedback()"
+                           class="mt-1">
+                           </div>
+
+                <div>
+                    <label class="text-gray-700 font-medium" for="selected-end-date">End date and time</label>
+                    <input id="selected-end-date"
+                           type="datetime-local"
+                           onchange="removeDataPlusFeedback()"
+                           class="mt-1">
+                           </div>
+
+                <div class="feedback-wrapper mt-3 text-red-500 text-sm h-4">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Placeholder function for the onchange event
+        function removeDataPlusFeedback() {
+            console.log("Date changed, clearing feedback.");
+            const feedbackEl = document.querySelector('.feedback-wrapper');
+            if (feedbackEl) {
+                feedbackEl.textContent = ''; // Clear previous feedback
+            }
+            // Add any other logic needed when dates change
+        }
+
+        // Function to format date to YYYY-MM-DDTHH:mm required by datetime-local
+        function formatDateTimeLocal(date) {
+            const year = date.getFullYear();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-indexed
+            const day = date.getDate().toString().padStart(2, '0');
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            return `${year}-${month}-${day}T${hours}:${minutes}`;
+        }
+
+        // Set dynamic min and max dates for the inputs
+        function setDateLimits() {
+            const startDateInput = document.getElementById('selected-start-date');
+            const endDateInput = document.getElementById('selected-end-date');
+
+            const now = new Date();
+
+            // Calculate minimum date (5 days from now)
+            const minDate = new Date(now);
+            minDate.setDate(now.getDate() + 5);
+            // Set time to the beginning of the day for min date start
+            minDate.setHours(0, 0, 0, 0);
+            const minDateString = formatDateTimeLocal(minDate);
+
+
+            // Calculate maximum date (100 days from now)
+            const maxDate = new Date(now);
+            maxDate.setDate(now.getDate() + 100);
+             // Set time to the end of the day for max date limit
+            maxDate.setHours(23, 59, 59, 999);
+            const maxDateString = formatDateTimeLocal(maxDate);
+
+            // Apply the calculated min and max dates to both inputs
+            if (startDateInput) {
+                startDateInput.min = minDateString;
+                startDateInput.max = maxDateString;
+                 // Optionally set a default value slightly after the minimum
+                const defaultStartDate = new Date(minDate);
+                defaultStartDate.setHours(9, 0); // e.g., default to 9:00 AM
+                // Ensure default is not before minDateString
+                if (defaultStartDate >= minDate) {
+                 startDateInput.value = formatDateTimeLocal(defaultStartDate);
+                } else {
+                 startDateInput.value = minDateString; // Fallback to minimum possible time
+                }
+
+            }
+            if (endDateInput) {
+                endDateInput.min = minDateString; // End date should also not be before the minimum start
+                endDateInput.max = maxDateString;
+                 // Optionally set a default end date (e.g., 1 hour after default start)
+                 const defaultEndDate = new Date(startDateInput.value);
+                 defaultEndDate.setHours(defaultEndDate.getHours() + 1);
+                 // Ensure default end date doesn't exceed max limit
+                 if (defaultEndDate <= maxDate) {
+                    endDateInput.value = formatDateTimeLocal(defaultEndDate);
+                 } else {
+                    // If adding an hour exceeds max, set to max possible time
+                    endDateInput.value = maxDateString;
+                 }
+            }
+        }
+
+        // Set the date limits when the page loads
+        document.addEventListener('DOMContentLoaded', setDateLimits);
+
+    </script>
+</body>
+</html>
+<a class="btn btn-primary pe-5 ps-5" role="button" href="payment.html">Booking</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section data-aos="fade" data-aos-delay="700" class="photo-gallery py-4 py-xl-5">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-8 col-xl-6 text-center mx-auto">
+                        <h2>Our Artwork</h2>
+                        <p class="w-lg-50"><span style="color: rgb(0, 0, 0);">A showcase of unique creations painted by our past participants—from vibrant canvases and cute plaster figures to custom-designed shirts and personalized everyday items. Each piece reflects individual creativity and the joyful spirit of our workshops. Let their work inspire your own masterpiece!</span></p>
+                    </div>
+                </div>
+                <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
+                    <div class="col item"><a href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"><img class="img-fluid" src="assets/img/myo_artjam02_2000x.jpg" width="312" height="312"></a></div>
+                    <div class="col item"><a href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"><img class="img-fluid" src="assets/img/image1.jpeg" width="354" height="311"></a></div>
+                    <div class="col item ps-4 pe-0"><img class="img-fluid me-5 mb-0 ps-0 ms-3" src="assets/img/images-7.jpeg" width="309" height="309"><a href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"></a></div>
+                    <div class="col item"><a href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"><img class="img-fluid" src="assets/img/2_02cf05fd-0508-4bdc-b2b6-894a0d420b4b.png" width="312" height="312"></a></div>
+                    <div class="col item ps-5 me-0 ms-0 pe-5"><a href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"></a><img class="img-fluid ms-0" src="assets/img/Room-To-Imagine_Canvas-Art_studentwork1-min.jpg" width="274" height="195"></div>
+                    <div class="col item"><a href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"><img class="img-fluid ms-5" src="assets/img/image_1c361e78-ff27-49fb-80b0-0cc2855444e2.heic.webp" width="275" height="275"></a></div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <footer class="bg-primary-gradient">
+        <div class="container py-4 py-lg-5">
+            <div class="row justify-content-center ms-0">
+                <div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last" data-aos="fade" data-aos-duration="700">
+                    <div class="fw-bold d-flex align-items-center mb-2"><span>Cloudy Studio</span></div>
+                    <p class="text-muted">An Art Studio where provide workshop for you :))</p>
+                </div>
+                <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column" data-aos="fade" data-aos-duration="300">
+                    <h3 class="fs-6 fw-bold">Navigation</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="workshop.html">Workshop</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li></li>
+                    </ul><a href="https://lin.ee/hQ28wdP"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อน" height="48" border="0"></a>
+                </div>
+                <div class="col-sm-6 col-md-12 col-lg-6" data-aos="fade" data-aos-duration="500">
+                    <h2 class="h4"><i class="fa fa-location-arrow"></i> Our Address</h2>
+                    <div><span><strong>Studio</strong></span></div>
+                    <div></div>
+                    <div><span>999 Phutthamonthon Sai 4 Rd, Salaya, Phutthamonthon District, Nakhon Pathom 73170</span></div>
+                    <hr class="d-sm-none">
+                </div>
+            </div>
+            <hr>
+            <div class="text-muted d-flex justify-content-between align-items-center pt-3">
+                <p class="mb-0">Copyright © 2025 Cloudy's Studio Powered By Cloudy's Project</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"></li>
+                    <li class="list-inline-item"></li>
+                    <li class="list-inline-item"></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/bold-and-bright.js"></script>
+    <script src="assets/js/Bootstrap-4---Payment-Form-script.js"></script>
+    <script src="assets/js/Contact-Form-v2-Modal--Full-with-Google-Map-scripts.js"></script>
+    <script src="https://djpsoftwarecdn.azureedge.net/availabilityjs-v1/availability.min.js"></script>
+    <script src="assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
+    <script src="assets/js/Lightbox-Gallery.js"></script>
+</body>
+
+</html>

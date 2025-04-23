@@ -1,0 +1,18 @@
+.availability-container {
+  justify-content: center;
+  box-align: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 20px;
+  border-style: ridge;
+}
+
+.availability-input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1em;
+}
+
